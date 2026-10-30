@@ -1,5 +1,7 @@
 // Nimbus landing · 交互脚本（无依赖）
 (() => {
+  // 静态托管（GitHub Pages / OSS 等）没有后端时，填上邮箱就会把表单转成 mailto
+  const FALLBACK_MAIL = '';
   const nav = document.getElementById('nav');
   const burger = document.getElementById('burger');
   const links = document.getElementById('links');
@@ -68,7 +70,15 @@
       say(data.message || '收到了，我们会尽快联系你。', 'ok');
       form.reset();
     } catch (err) {
-      say('提交没成功（接口未部署或网络异常）。可以直接跑 nimbus deploy 自己上线。', 'err');
+      // 静态托管（GitHub Pages 等）没有后端：填了 FALLBACK_MAIL 就转邮件
+      if (FALLBACK_MAIL) {
+        const sub = encodeURIComponent('来自 nimbus 站点的新订阅');
+        const body = encodeURIComponent(`邮箱: ${email}\n想部署: ${form.site.value.trim()}\n时间: ${new Date().toLocaleString()}`);
+        location.href = `mailto:${FALLBACK_MAIL}?subject=${sub}&body=${body}`;
+        say('已打开邮件客户端，直接发送就完成订阅。', 'ok');
+      } else {
+        say('这个版本是纯静态托管，没有表单接口。要收订阅换成 Formspree，或用 Cloudflare 版自带 /api/contact。', 'err');
+      }
       console.warn('[contact]', err);
     } finally {
       btn.disabled = false;
