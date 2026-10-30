@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Nimbus · 把想法一键推到全球边缘</title>
+<meta name="description" content="Nimbus 是一个面向独立开发者的边缘站点平台：静态托管、边缘函数、自定义域名与毫秒级冷启动，全部开箱即用。" />
+<meta name="theme-color" content="#0a0b10" />
+<meta property="og:title" content="Nimbus · 把想法一键推到全球边缘" />
+<meta property="og:description" content="静态托管 + 边缘函数 + 自定义域名。一次部署，全球 300+ 节点就近响应。" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="aurora" aria-hidden="true">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="./">
+    <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7c9cff"/><stop offset="1" stop-color="#b67cff"/>
+      </linearGradient></defs>
+      <path d="M9 23c-3.3 0-6-2.7-6-6s2.7-6 6-6c.9 0 1.8.2 2.6.6C12.9 8.5 15.9 6 19.5 6 24 6 27.7 9.4 28 13.8c2.4.6 4 2.7 4 5.2 0 2.9-2.4 5.3-5.3 5.3H9z" fill="url(#g)"/>
+    </svg>
+    <span>Nimbus</span>
+  </a>
+  <nav class="links" id="links">
+    <a href="#features">能力</a>
+    <a href="#pricing">价格</a>
+    <a href="#faq">问答</a>
+    <a href="#contact">联系</a>
+  </nav>
+  <div class="nav-cta">
+    <a class="btn ghost" href="#contact">登录</a>
+    <a class="btn solid" href="#pricing">免费开始</a>
+  </div>
+  <button class="burger" id="burger" aria-label="菜单" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="pill reveal"><span class="dot"></span> 边缘网络 · 300+ 节点 · 平均 38ms</p>
+    <h1 class="reveal">把你的想法<br /><em>一键推到全球边缘</em></h1>
+    <p class="lede reveal">
+      静态资源、边缘函数、自定义域名、自动 HTTPS —— 一个命令完成部署。
+      不需要服务器，不需要运维，也不需要备案通过才能看到效果。
+    </p>
+    <div class="hero-actions reveal">
+      <a class="btn solid lg" href="#pricing">开始部署</a>
+      <a class="btn ghost lg" href="#features">看看能做什么</a>
+    </div>
+    <div class="terminal reveal" aria-label="部署示例">
+      <div class="term-bar"><i></i><i></i><i></i><span>terminal</span></div>
+      <pre><code><span class="c">$</span> npm create nimbus@latest
+<span class="c">$</span> nimbus deploy
+<span class="ok">✓</span> 上传 12 个文件 · 2.1 MB
+<span class="ok">✓</span> 边缘缓存已预热 · 300 个节点
+<span class="ok">✓</span> https://your-site.nimbus.app <span class="dim">已上线 (1.8s)</span></code></pre>
+    </div>
+    <div class="stats reveal">
+      <div><b>38<span>ms</span></b><small>全球平均首字节</small></div>
+      <div><b>99.99<span>%</span></b><small>近 12 个月可用性</small></div>
+      <div><b>0<span>台</span></b><small>需要你运维的服务器</small></div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="sec-head reveal">
+      <p class="kicker">CAPABILITIES</p>
+      <h2>上线需要的东西，全都在这儿</h2>
+      <p class="sub">从静态页到带接口的全栈应用，同一套部署流程。</p>
+    </div>
+    <div class="grid">
+      <article class="card reveal">
+        <div class="ico">⚡</div>
+        <h3>秒级部署</h3>
+        <p>一条命令上传构建产物，全球节点同步完成，回滚只需再点一次。</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico">🌍</div>
+        <h3>就近响应</h3>
+        <p>请求在离用户最近的节点终结，静态资源走边缘缓存，不回溯源站。</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico">λ</div>
+        <h3>边缘函数</h3>
+        <p>在节点上直接跑 JS：鉴权、改写、A/B、调用上游 API，冷启动接近零。</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico">🔒</div>
+        <h3>自动 HTTPS</h3>
+        <p>绑定域名即签发证书并自动续期，HTTP/3 与 Brotli 默认开启。</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico">🧩</div>
+        <h3>预览环境</h3>
+        <p>每个分支一个独立预览域名，评审完再合并，线上永远干净。</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico">📈</div>
+        <h3>实时观测</h3>
+        <p>请求量、缓存命中率、错误分布、P95 延迟，一屏看完。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="pricing">
+    <div class="sec-head reveal">
+      <p class="kicker">PRICING</p>
+      <h2>按用量付费，不按座位收费</h2>
+      <p class="sub">免费额度足够跑一个正式的个人站点。</p>
+    </div>
+    <div class="plans">
+      <article class="plan reveal">
+        <h3>Hobby</h3>
+        <p class="price"><span>¥</span>0<small>/月</small></p>
+        <ul>
+          <li>100 GB 流量 / 月</li>
+          <li>无限静态站点</li>
+          <li>免费子域名 + HTTPS</li>
+          <li>社区支持</li>
+        </ul>
+        <a class="btn ghost full" href="#contact">免费开始</a>
+      </article>
+      <article class="plan featured reveal">
+        <span class="tag">最受欢迎</span>
+        <h3>Pro</h3>
+        <p class="price"><span>¥</span>149<small>/月</small></p>
+        <ul>
+          <li>1 TB 流量 / 月</li>
+          <li>边缘函数 1000 万次调用</li>
+          <li>自定义域名 + 分支预览</li>
+          <li>邮件支持（24h 内）</li>
+        </ul>
+        <a class="btn solid full" href="#contact">选择 Pro</a>
+      </article>
+      <article class="plan reveal">
+        <h3>Scale</h3>
+        <p class="price"><span>¥</span>899<small>/月</small></p>
+        <ul>
+          <li>流量按量计费</li>
+          <li>专属带宽与 WAF 规则</li>
+          <li>多区域日志投递</li>
+          <li>专属技术顾问</li>
+        </ul>
+        <a class="btn ghost full" href="#contact">联系我们</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="sec-head reveal">
+      <p class="kicker">FAQ</p>
+      <h2>常见问题</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>部署需要多久？</summary><p>静态站点通常 2 秒内完成；带边缘函数的项目首次部署约 10 秒。</p></details>
+      <details><summary>可以绑定自己的域名吗？</summary><p>可以。添加一条 CNAME 记录指向平台域名，证书自动签发，通常 1 分钟内生效。</p></details>
+      <details><summary>支持后端和数据库吗？</summary><p>边缘函数可以连接任何 HTTP 上游、KV 存储和对象存储；也支持把 @server 指向你自己的 API。</p></details>
+      <details><summary>能回滚吗？</summary><p>每次部署都是一个不可变版本，控制台一键回滚到任意历史版本。</p></details>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="contact-wrap reveal">
+      <div class="contact-copy">
+        <p class="kicker">GET STARTED</p>
+        <h2>留下邮箱，<br />我们帮你把站点推上线</h2>
+        <p class="sub">工作日 2 小时内回复。也可以直接跑一条命令自己部署。</p>
+      </div>
+      <form id="signup" class="form" novalidate>
+        <label for="email">邮箱</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+        <label for="site">想部署什么？<span class="opt">（选填）</span></label>
+        <input id="site" name="site" type="text" placeholder="个人主页 / 产品落地页 / 博客" />
+        <button class="btn solid full" type="submit" id="submitBtn">提交</button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="brand small">
+      <svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><path d="M9 23c-3.3 0-6-2.7-6-6s2.7-6 6-6c.9 0 1.8.2 2.6.6C12.9 8.5 15.9 6 19.5 6 24 6 27.7 9.4 28 13.8c2.4.6 4 2.7 4 5.2 0 2.9-2.4 5.3-5.3 5.3H9z" fill="url(#g)"/></svg>
+      <span>Nimbus</span>
+    </div>
+    <p>© <span id="year">2026</span> Nimbus · 演示站点，内容可自由替换</p>
+    <div class="foot-links">
+      <a href="robots.txt">robots</a>
+      <a href="#features">能力</a>
+      <a href="#contact">联系</a>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
