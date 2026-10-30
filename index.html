@@ -4,200 +4,383 @@
 <meta charset="UTF-8" />
 <script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Nimbus · 把想法一键推到全球边缘</title>
-<meta name="description" content="Nimbus 是一个面向独立开发者的边缘站点平台：静态托管、边缘函数、自定义域名与毫秒级冷启动，全部开箱即用。" />
-<meta name="theme-color" content="#0a0b10" />
-<meta property="og:title" content="Nimbus · 把想法一键推到全球边缘" />
-<meta property="og:description" content="静态托管 + 边缘函数 + 自定义域名。一次部署，全球 300+ 节点就近响应。" />
+<title>NIMBUS X Pro · 旗舰影像航拍无人机</title>
+<meta name="description" content="NIMBUS X Pro：1 英寸 CMOS、8K/60fps、46 分钟续航、全向避障。轻于 249 克，把电影级影像装进口袋。" />
+<meta name="theme-color" content="#000000" />
+<meta property="og:title" content="NIMBUS X Pro · 旗舰影像航拍无人机" />
+<meta property="og:description" content="1 英寸 CMOS · 8K/60fps · 46 分钟续航 · 全向避障" />
 <meta property="og:type" content="website" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="aurora" aria-hidden="true">
-  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
-</div>
-<div class="grain" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
-  <a class="brand" href="./">
-    <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
-      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#7c9cff"/><stop offset="1" stop-color="#b67cff"/>
-      </linearGradient></defs>
-      <path d="M9 23c-3.3 0-6-2.7-6-6s2.7-6 6-6c.9 0 1.8.2 2.6.6C12.9 8.5 15.9 6 19.5 6 24 6 27.7 9.4 28 13.8c2.4.6 4 2.7 4 5.2 0 2.9-2.4 5.3-5.3 5.3H9z" fill="url(#g)"/>
-    </svg>
-    <span>Nimbus</span>
-  </a>
-  <nav class="links" id="links">
-    <a href="#features">能力</a>
-    <a href="#pricing">价格</a>
-    <a href="#faq">问答</a>
-    <a href="#contact">联系</a>
-  </nav>
-  <div class="nav-cta">
-    <a class="btn ghost" href="#contact">登录</a>
-    <a class="btn solid" href="#pricing">免费开始</a>
+  <div class="nav-inner">
+    <a class="logo" href="./" aria-label="NIMBUS 首页">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2 22 12 12 22 2 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5 16.5 12 12 16.5 7.5 12z" fill="currentColor"/></svg>
+      <span>NIMBUS</span>
+    </a>
+
+    <nav class="menu" aria-label="主导航">
+      <a href="#lineup">航拍无人机</a>
+      <a href="#lineup">手持影像</a>
+      <a href="#lineup">运动相机</a>
+      <a href="#specs">技术规格</a>
+      <a href="#support">支持</a>
+      <a href="#contact">商城</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="icon-btn" aria-label="搜索">
+        <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <a class="nav-cta" href="#contact">立即购买</a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="菜单" aria-expanded="false"><span></span><span></span></button>
   </div>
-  <button class="burger" id="burger" aria-label="菜单" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#lineup">航拍无人机</a>
+    <a href="#lineup">手持影像</a>
+    <a href="#lineup">运动相机</a>
+    <a href="#specs">技术规格</a>
+    <a href="#support">支持</a>
+    <a href="#contact">商城</a>
+    <a class="m-cta" href="#contact">立即购买</a>
+  </div>
 </header>
 
 <main>
-  <section class="hero">
-    <p class="pill reveal"><span class="dot"></span> 边缘网络 · 300+ 节点 · 平均 38ms</p>
-    <h1 class="reveal">把你的想法<br /><em>一键推到全球边缘</em></h1>
-    <p class="lede reveal">
-      静态资源、边缘函数、自定义域名、自动 HTTPS —— 一个命令完成部署。
-      不需要服务器，不需要运维，也不需要备案通过才能看到效果。
-    </p>
-    <div class="hero-actions reveal">
-      <a class="btn solid lg" href="#pricing">开始部署</a>
-      <a class="btn ghost lg" href="#features">看看能做什么</a>
-    </div>
-    <div class="terminal reveal" aria-label="部署示例">
-      <div class="term-bar"><i></i><i></i><i></i><span>terminal</span></div>
-      <pre><code><span class="c">$</span> npm create nimbus@latest
-<span class="c">$</span> nimbus deploy
-<span class="ok">✓</span> 上传 12 个文件 · 2.1 MB
-<span class="ok">✓</span> 边缘缓存已预热 · 300 个节点
-<span class="ok">✓</span> https://your-site.nimbus.app <span class="dim">已上线 (1.8s)</span></code></pre>
-    </div>
-    <div class="stats reveal">
-      <div><b>38<span>ms</span></b><small>全球平均首字节</small></div>
-      <div><b>99.99<span>%</span></b><small>近 12 个月可用性</small></div>
-      <div><b>0<span>台</span></b><small>需要你运维的服务器</small></div>
-    </div>
-  </section>
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="sky"></div>
+      <div class="glow"></div>
+      <svg class="drone" viewBox="0 0 900 520" aria-hidden="true">
+        <defs>
+          <linearGradient id="bodyG" x1=".25" y1="0" x2=".75" y2="1">
+            <stop offset="0" stop-color="#525a6b"/><stop offset=".38" stop-color="#242935"/><stop offset="1" stop-color="#070810"/>
+          </linearGradient>
+          <linearGradient id="armG" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#343b4b"/><stop offset="1" stop-color="#0a0c12"/>
+          </linearGradient>
+          <linearGradient id="rimG" x1="0" y1="0" x2=".6" y2="1">
+            <stop offset="0" stop-color="#d7e3ff" stop-opacity=".95"/><stop offset=".55" stop-color="#7d90b8" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </linearGradient>
+          <radialGradient id="lensG"><stop offset="0" stop-color="#c3d7ff"/><stop offset=".42" stop-color="#2d4068"/><stop offset="1" stop-color="#05070c"/></radialGradient>
+          <filter id="blurProp" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
+          <filter id="blurSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="20"/></filter>
+        </defs>
 
-  <section class="section" id="features">
-    <div class="sec-head reveal">
-      <p class="kicker">CAPABILITIES</p>
-      <h2>上线需要的东西，全都在这儿</h2>
-      <p class="sub">从静态页到带接口的全栈应用，同一套部署流程。</p>
-    </div>
-    <div class="grid">
-      <article class="card reveal">
-        <div class="ico">⚡</div>
-        <h3>秒级部署</h3>
-        <p>一条命令上传构建产物，全球节点同步完成，回滚只需再点一次。</p>
-      </article>
-      <article class="card reveal">
-        <div class="ico">🌍</div>
-        <h3>就近响应</h3>
-        <p>请求在离用户最近的节点终结，静态资源走边缘缓存，不回溯源站。</p>
-      </article>
-      <article class="card reveal">
-        <div class="ico">λ</div>
-        <h3>边缘函数</h3>
-        <p>在节点上直接跑 JS：鉴权、改写、A/B、调用上游 API，冷启动接近零。</p>
-      </article>
-      <article class="card reveal">
-        <div class="ico">🔒</div>
-        <h3>自动 HTTPS</h3>
-        <p>绑定域名即签发证书并自动续期，HTTP/3 与 Brotli 默认开启。</p>
-      </article>
-      <article class="card reveal">
-        <div class="ico">🧩</div>
-        <h3>预览环境</h3>
-        <p>每个分支一个独立预览域名，评审完再合并，线上永远干净。</p>
-      </article>
-      <article class="card reveal">
-        <div class="ico">📈</div>
-        <h3>实时观测</h3>
-        <p>请求量、缓存命中率、错误分布、P95 延迟，一屏看完。</p>
-      </article>
-    </div>
-  </section>
+        <ellipse cx="455" cy="432" rx="220" ry="24" fill="#000" opacity=".6" filter="url(#blurSoft)"/>
 
-  <section class="section" id="pricing">
-    <div class="sec-head reveal">
-      <p class="kicker">PRICING</p>
-      <h2>按用量付费，不按座位收费</h2>
-      <p class="sub">免费额度足够跑一个正式的个人站点。</p>
-    </div>
-    <div class="plans">
-      <article class="plan reveal">
-        <h3>Hobby</h3>
-        <p class="price"><span>¥</span>0<small>/月</small></p>
-        <ul>
-          <li>100 GB 流量 / 月</li>
-          <li>无限静态站点</li>
-          <li>免费子域名 + HTTPS</li>
-          <li>社区支持</li>
-        </ul>
-        <a class="btn ghost full" href="#contact">免费开始</a>
-      </article>
-      <article class="plan featured reveal">
-        <span class="tag">最受欢迎</span>
-        <h3>Pro</h3>
-        <p class="price"><span>¥</span>149<small>/月</small></p>
-        <ul>
-          <li>1 TB 流量 / 月</li>
-          <li>边缘函数 1000 万次调用</li>
-          <li>自定义域名 + 分支预览</li>
-          <li>邮件支持（24h 内）</li>
-        </ul>
-        <a class="btn solid full" href="#contact">选择 Pro</a>
-      </article>
-      <article class="plan reveal">
-        <h3>Scale</h3>
-        <p class="price"><span>¥</span>899<small>/月</small></p>
-        <ul>
-          <li>流量按量计费</li>
-          <li>专属带宽与 WAF 规则</li>
-          <li>多区域日志投递</li>
-          <li>专属技术顾问</li>
-        </ul>
-        <a class="btn ghost full" href="#contact">联系我们</a>
-      </article>
-    </div>
-  </section>
+        <!-- 旋转桨叶（模糊盘面） -->
+        <g opacity=".5" filter="url(#blurProp)">
+          <ellipse cx="205" cy="164" rx="132" ry="11" transform="rotate(-13 205 164)" fill="#9db3e0"/>
+          <ellipse cx="205" cy="164" rx="132" ry="11" transform="rotate(9 205 164)" fill="#9db3e0" opacity=".7"/>
+          <ellipse cx="695" cy="164" rx="132" ry="11" transform="rotate(13 695 164)" fill="#9db3e0"/>
+          <ellipse cx="695" cy="164" rx="132" ry="11" transform="rotate(-9 695 164)" fill="#9db3e0" opacity=".7"/>
+          <ellipse cx="205" cy="338" rx="132" ry="11" transform="rotate(13 205 338)" fill="#9db3e0"/>
+          <ellipse cx="205" cy="338" rx="132" ry="11" transform="rotate(-9 205 338)" fill="#9db3e0" opacity=".7"/>
+          <ellipse cx="695" cy="338" rx="132" ry="11" transform="rotate(-13 695 338)" fill="#9db3e0"/>
+          <ellipse cx="695" cy="338" rx="132" ry="11" transform="rotate(9 695 338)" fill="#9db3e0" opacity=".7"/>
+        </g>
 
-  <section class="section" id="faq">
-    <div class="sec-head reveal">
-      <p class="kicker">FAQ</p>
-      <h2>常见问题</h2>
-    </div>
-    <div class="faq reveal">
-      <details><summary>部署需要多久？</summary><p>静态站点通常 2 秒内完成；带边缘函数的项目首次部署约 10 秒。</p></details>
-      <details><summary>可以绑定自己的域名吗？</summary><p>可以。添加一条 CNAME 记录指向平台域名，证书自动签发，通常 1 分钟内生效。</p></details>
-      <details><summary>支持后端和数据库吗？</summary><p>边缘函数可以连接任何 HTTP 上游、KV 存储和对象存储；也支持把 @server 指向你自己的 API。</p></details>
-      <details><summary>能回滚吗？</summary><p>每次部署都是一个不可变版本，控制台一键回滚到任意历史版本。</p></details>
-    </div>
-  </section>
+        <!-- 机臂 -->
+        <g stroke="url(#armG)" stroke-width="21" stroke-linecap="round">
+          <line x1="450" y1="252" x2="205" y2="164"/><line x1="450" y1="252" x2="695" y2="164"/>
+          <line x1="450" y1="252" x2="205" y2="338"/><line x1="450" y1="252" x2="695" y2="338"/>
+        </g>
+        <g stroke="url(#rimG)" stroke-width="1.4" opacity=".65" fill="none">
+          <line x1="450" y1="240" x2="205" y2="152"/><line x1="450" y1="240" x2="695" y2="152"/>
+        </g>
 
-  <section class="section contact" id="contact">
-    <div class="contact-wrap reveal">
-      <div class="contact-copy">
-        <p class="kicker">GET STARTED</p>
-        <h2>留下邮箱，<br />我们帮你把站点推上线</h2>
-        <p class="sub">工作日 2 小时内回复。也可以直接跑一条命令自己部署。</p>
+        <!-- 电机 -->
+        <g>
+          <circle cx="205" cy="164" r="25" fill="#0d1016" stroke="#414a5d" stroke-width="1.2"/>
+          <circle cx="205" cy="164" r="14" fill="#171b24" stroke="#2b3242"/>
+          <circle cx="695" cy="164" r="25" fill="#0d1016" stroke="#414a5d" stroke-width="1.2"/>
+          <circle cx="695" cy="164" r="14" fill="#171b24" stroke="#2b3242"/>
+          <circle cx="205" cy="338" r="25" fill="#0d1016" stroke="#414a5d" stroke-width="1.2"/>
+          <circle cx="205" cy="338" r="14" fill="#171b24" stroke="#2b3242"/>
+          <circle cx="695" cy="338" r="25" fill="#0d1016" stroke="#414a5d" stroke-width="1.2"/>
+          <circle cx="695" cy="338" r="14" fill="#171b24" stroke="#2b3242"/>
+        </g>
+
+        <!-- 机身 -->
+        <ellipse cx="450" cy="250" rx="116" ry="84" fill="url(#bodyG)"/>
+        <path d="M450 176c-56 0-94 30-102 62" fill="none" stroke="url(#rimG)" stroke-width="2"/>
+        <path d="M356 268c14 30 52 46 94 46s80-16 94-46" fill="none" stroke="#000" stroke-opacity=".55" stroke-width="1.4"/>
+        <path d="M382 210h136" stroke="#5a6478" stroke-opacity=".5" stroke-width="1.1"/>
+        <circle cx="404" cy="240" r="2.8" fill="#6ef0a8"/>
+        <circle cx="496" cy="240" r="2.8" fill="#6ef0a8" opacity=".28"/>
+
+        <!-- 云台相机 -->
+        <g>
+          <rect x="414" y="296" width="72" height="62" rx="16" fill="#0b0e15" stroke="#3d4557" stroke-width="1.2"/>
+          <circle cx="450" cy="327" r="22" fill="url(#lensG)" stroke="#8fa3c9" stroke-width="1.2"/>
+          <circle cx="450" cy="327" r="9.5" fill="#080d18" opacity=".92"/>
+          <circle cx="442.5" cy="319.5" r="3.6" fill="#e8f0ff" opacity=".95"/>
+          <rect x="432" y="356" width="36" height="3" rx="1.5" fill="#2a3140"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero-copy">
+      <p class="eyebrow reveal">NEW · NIMBUS X PRO</p>
+      <h1 class="reveal">把电影级影像<br />装进口袋</h1>
+      <p class="hero-sub reveal">1 英寸 CMOS · 8K/60fps · 46 分钟续航 · 全向避障</p>
+      <div class="hero-actions reveal">
+        <a class="btn solid" href="#lineup">了解更多</a>
+        <a class="btn line" href="#contact">立即购买 ¥8,999 起</a>
       </div>
-      <form id="signup" class="form" novalidate>
-        <label for="email">邮箱</label>
-        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
-        <label for="site">想部署什么？<span class="opt">（选填）</span></label>
-        <input id="site" name="site" type="text" placeholder="个人主页 / 产品落地页 / 博客" />
-        <button class="btn solid full" type="submit" id="submitBtn">提交</button>
+    </div>
+
+    <a class="scroll-hint" href="#lineup" aria-label="向下滚动">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ================= 产品线 ================= -->
+  <section class="lineup light" id="lineup">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow dark">PRODUCT LINEUP</p>
+        <h2>三条产品线，一种影像标准</h2>
+      </div>
+
+      <div class="cards">
+        <a class="pcard reveal" href="#specs">
+          <div class="pcard-media">
+            <svg viewBox="0 0 320 240" aria-hidden="true">
+              <defs>
+                <linearGradient id="c1b" x1=".2" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#4e5667"/><stop offset=".4" stop-color="#232935"/><stop offset="1" stop-color="#0a0c12"/></linearGradient>
+                <radialGradient id="c1g"><stop offset="0" stop-color="#dfe6ff" stop-opacity=".85"/><stop offset="1" stop-color="#dfe6ff" stop-opacity="0"/></radialGradient>
+                <filter id="c1s"><feGaussianBlur stdDeviation="7"/></filter>
+              </defs>
+              <circle cx="160" cy="118" r="92" fill="url(#c1g)"/>
+              <ellipse cx="160" cy="206" rx="86" ry="10" fill="#1a2030" opacity=".18" filter="url(#c1s)"/>
+              <!-- 后机臂 -->
+              <g stroke="#2b3241" stroke-width="9" stroke-linecap="round" opacity=".85">
+                <line x1="160" y1="120" x2="96" y2="76"/><line x1="160" y1="120" x2="224" y2="76"/>
+              </g>
+              <g fill="#151a24" stroke="#3b4354"><circle cx="96" cy="76" r="11"/><circle cx="224" cy="76" r="11"/></g>
+              <!-- 机身 -->
+              <rect x="108" y="96" width="104" height="58" rx="26" fill="url(#c1b)"/>
+              <path d="M120 108h80" stroke="#93a4c9" stroke-opacity=".5" stroke-width="1.4"/>
+              <!-- 前机臂 -->
+              <g stroke="#333b4c" stroke-width="10" stroke-linecap="round">
+                <line x1="160" y1="126" x2="92" y2="164"/><line x1="160" y1="126" x2="228" y2="164"/>
+              </g>
+              <g fill="#0d1119" stroke="#434c5f"><circle cx="92" cy="164" r="13"/><circle cx="228" cy="164" r="13"/></g>
+              <!-- 桨叶 -->
+              <g opacity=".4" fill="#8ea3cf">
+                <ellipse cx="92" cy="164" rx="40" ry="5" transform="rotate(-12 92 164)"/>
+                <ellipse cx="228" cy="164" rx="40" ry="5" transform="rotate(12 228 164)"/>
+              </g>
+              <!-- 云台 -->
+              <rect x="140" y="146" width="40" height="34" rx="9" fill="#0b0e15" stroke="#3b4354"/>
+              <circle cx="160" cy="163" r="12" fill="#0a1424" stroke="#8fa3c9"/>
+              <circle cx="160" cy="163" r="5" fill="#c3d7ff"/>
+            </svg>
+          </div>
+          <div class="pcard-body">
+            <h3>航拍无人机</h3>
+            <p>X Pro / X Air / X Mini</p>
+            <span class="more">了解更多 →</span>
+          </div>
+        </a>
+
+        <a class="pcard reveal" href="#specs">
+          <div class="pcard-media">
+            <svg viewBox="0 0 320 240" aria-hidden="true">
+              <defs>
+                <linearGradient id="c2b" x1=".2" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#4b5263"/><stop offset=".42" stop-color="#222834"/><stop offset="1" stop-color="#0a0c12"/></linearGradient>
+                <radialGradient id="c2g"><stop offset="0" stop-color="#e8e2ff" stop-opacity=".8"/><stop offset="1" stop-color="#e8e2ff" stop-opacity="0"/></radialGradient>
+                <filter id="c2s"><feGaussianBlur stdDeviation="7"/></filter>
+              </defs>
+              <circle cx="160" cy="118" r="90" fill="url(#c2g)"/>
+              <ellipse cx="160" cy="210" rx="52" ry="9" fill="#1a2030" opacity=".18" filter="url(#c2s)"/>
+              <!-- 云台臂 -->
+              <rect x="150" y="88" width="20" height="24" rx="6" fill="#2a3140"/>
+              <rect x="132" y="104" width="56" height="12" rx="6" fill="#333b4c"/>
+              <!-- 相机头 -->
+              <rect x="118" y="52" width="84" height="56" rx="16" fill="url(#c2b)"/>
+              <circle cx="160" cy="80" r="20" fill="#0a1424" stroke="#8fa3c9" stroke-width="1.4"/>
+              <circle cx="160" cy="80" r="8" fill="#c3d7ff"/>
+              <circle cx="153" cy="73" r="3" fill="#eef4ff" opacity=".9"/>
+              <rect x="126" y="96" width="68" height="3" rx="1.5" fill="#1b2029"/>
+              <!-- 手柄 -->
+              <rect x="136" y="116" width="48" height="88" rx="16" fill="url(#c2b)"/>
+              <rect x="146" y="132" width="28" height="20" rx="5" fill="#0d1119" stroke="#3b4354"/>
+              <circle cx="160" cy="152" r="4" fill="#5b6a8c"/>
+              <rect x="150" y="168" width="20" height="22" rx="6" fill="#151a24" stroke="#333b4c"/>
+              <path d="M144 122h32" stroke="#93a4c9" stroke-opacity=".45" stroke-width="1.3"/>
+            </svg>
+          </div>
+          <div class="pcard-body">
+            <h3>手持影像</h3>
+            <p>云台相机 / 稳定器 / 麦克风</p>
+            <span class="more">了解更多 →</span>
+          </div>
+        </a>
+
+        <a class="pcard reveal" href="#specs">
+          <div class="pcard-media">
+            <svg viewBox="0 0 320 240" aria-hidden="true">
+              <defs>
+                <linearGradient id="c3b" x1=".15" y1="0" x2=".85" y2="1"><stop offset="0" stop-color="#4e5667"/><stop offset=".4" stop-color="#232935"/><stop offset="1" stop-color="#0a0c12"/></linearGradient>
+                <radialGradient id="c3g"><stop offset="0" stop-color="#e2fff2" stop-opacity=".7"/><stop offset="1" stop-color="#e2fff2" stop-opacity="0"/></radialGradient>
+                <filter id="c3s"><feGaussianBlur stdDeviation="7"/></filter>
+              </defs>
+              <circle cx="160" cy="120" r="90" fill="url(#c3g)"/>
+              <ellipse cx="160" cy="196" rx="78" ry="10" fill="#1a2030" opacity=".18" filter="url(#c3s)"/>
+              <!-- 机身 -->
+              <rect x="88" y="72" width="144" height="98" rx="26" fill="url(#c3b)"/>
+              <path d="M104 86h112" stroke="#93a4c9" stroke-opacity=".45" stroke-width="1.4"/>
+              <!-- 镜头 -->
+              <circle cx="160" cy="121" r="34" fill="#0c1220" stroke="#5d6b8a" stroke-width="2"/>
+              <circle cx="160" cy="121" r="24" fill="#0a1424" stroke="#8fa3c9" stroke-width="1.2"/>
+              <circle cx="160" cy="121" r="12" fill="#05070c"/>
+              <circle cx="150" cy="110" r="4.5" fill="#e8f0ff" opacity=".95"/>
+              <!-- 指示灯 / 按键 -->
+              <circle cx="206" cy="92" r="4" fill="#6ef0a8" opacity=".9"/>
+              <rect x="112" y="86" width="20" height="10" rx="4" fill="#0d1119" stroke="#333b4c"/>
+              <rect x="188" y="146" width="30" height="8" rx="4" fill="#333b4c"/>
+              <!-- 侧面散热 -->
+              <g stroke="#333b4c" stroke-width="2"><line x1="96" y1="112" x2="96" y2="132"/><line x1="102" y1="112" x2="102" y2="132"/></g>
+            </svg>
+          </div>
+          <div class="pcard-body">
+            <h3>运动相机</h3>
+            <p>4K 超广角 / 防水 / 防抖</p>
+            <span class="more">了解更多 →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 主视觉分屏 ================= -->
+  <section class="split" id="specs">
+    <div class="split-media reveal">
+      <svg class="scene" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="skyG" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0a1024"/><stop offset=".42" stop-color="#243055"/>
+            <stop offset=".68" stop-color="#6b5a72"/><stop offset=".84" stop-color="#c98a63"/><stop offset="1" stop-color="#f0b183"/>
+          </linearGradient>
+          <radialGradient id="sunG"><stop offset="0" stop-color="#fff2d8"/><stop offset=".45" stop-color="#ffd9a0" stop-opacity=".75"/><stop offset="1" stop-color="#ffb877" stop-opacity="0"/></radialGradient>
+          <linearGradient id="h1G" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b2f4a"/><stop offset="1" stop-color="#171a2b"/></linearGradient>
+          <linearGradient id="h2G" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14172a"/><stop offset="1" stop-color="#080a14"/></linearGradient>
+          <linearGradient id="h3G" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0c16"/><stop offset="1" stop-color="#05060b"/></linearGradient>
+        </defs>
+        <rect width="1000" height="700" fill="url(#skyG)"/>
+        <g opacity=".85"><circle cx="700" cy="470" r="230" fill="url(#sunG)"/></g>
+        <circle cx="700" cy="470" r="46" fill="#ffeccd" opacity=".9"/>
+        <!-- 远山 -->
+        <path d="M0 470 L120 430 L230 462 L340 414 L470 452 L600 420 L720 456 L840 418 L1000 452 L1000 700 L0 700 Z" fill="url(#h1G)" opacity=".92"/>
+        <path d="M0 520 L140 486 L260 516 L400 474 L540 512 L680 480 L820 514 L1000 484 L1000 700 L0 700 Z" fill="url(#h2G)"/>
+        <path d="M0 592 L160 556 L320 588 L470 552 L640 590 L800 558 L1000 596 L1000 700 L0 700 Z" fill="url(#h3G)"/>
+        <!-- 无人机剪影 -->
+        <g transform="translate(268 232) scale(.5)" fill="#05070c" opacity=".92">
+          <rect x="-7" y="-7" width="62" height="14" rx="7"/>
+          <rect x="-7" y="30" width="62" height="14" rx="7"/>
+          <rect x="18" y="-24" width="12" height="72" rx="6"/>
+          <circle cx="0" cy="0" r="10"/><circle cx="48" cy="0" r="10"/>
+          <circle cx="0" cy="37" r="10"/><circle cx="48" cy="37" r="10"/>
+          <ellipse cx="0" cy="0" rx="26" ry="3" opacity=".7"/>
+          <ellipse cx="48" cy="0" rx="26" ry="3" opacity=".7"/>
+          <rect x="30" y="50" width="16" height="14" rx="4"/>
+        </g>
+        <!-- 前景雾 -->
+        <rect y="560" width="1000" height="140" fill="url(#h3G)" opacity=".55"/>
+      </svg>
+      <div class="shot-cap">X Pro · 1 英寸 CMOS 主摄</div>
+    </div>
+    <div class="split-copy">
+      <p class="eyebrow reveal">IMAGING SYSTEM</p>
+      <h2 class="reveal">看见每一束光</h2>
+      <p class="p reveal">1 英寸堆栈式传感器，2.4μm 等效像素尺寸，f/2.8 可变光圈。夜景不再是妥协，而是另一种表达。</p>
+      <ul class="ticks reveal">
+        <li>8K/60fps HDR 视频，10-bit D-Log M</li>
+        <li>双原生 ISO，暗光噪点降低 40%</li>
+        <li>三轴机械云台，±0.005° 稳定精度</li>
+      </ul>
+      <a class="btn line reveal" href="#contact">查看完整规格</a>
+    </div>
+  </section>
+
+  <!-- ================= 数字 ================= -->
+  <section class="numbers dark">
+    <div class="wrap numbers-grid">
+      <div class="num reveal"><b>8K<span>/60</span></b><small>视频规格</small></div>
+      <div class="num reveal"><b>46<span>min</span></b><small>最长飞行时间</small></div>
+      <div class="num reveal"><b>20<span>km</span></b><small>图传距离</small></div>
+      <div class="num reveal"><b>249<span>g</span></b><small>起飞重量</small></div>
+    </div>
+  </section>
+
+  <!-- ================= 能力 ================= -->
+  <section class="cap light" id="support">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="eyebrow dark">WHY NIMBUS</p>
+        <h2>飞得更远，也更安心</h2>
+      </div>
+      <div class="cap-grid">
+        <div class="cap-item reveal"><h3>全向避障</h3><p>六目视觉 + 双目红外，前后左右上下全向感知，复杂环境自动绕行。</p></div>
+        <div class="cap-item reveal"><h3>20km 图传</h3><p>O4 图传，1080p/60fps 实时回传，抗干扰自适应跳频。</p></div>
+        <div class="cap-item reveal"><h3>46 分钟续航</h3><p>智能电池 5000mAh，支持快充与低温自加热。</p></div>
+        <div class="cap-item reveal"><h3>一键成片</h3><p>大师镜头、延时、轨迹跟随，自动剪辑并生成字幕。</p></div>
+        <div class="cap-item reveal"><h3>249 克</h3><p>多国免注册起飞，折叠后仅一瓶水大小。</p></div>
+        <div class="cap-item reveal"><h3>全天候</h3><p>IP55 防护，-10℃ 至 40℃ 正常工作。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA / 订阅 ================= -->
+  <section class="cta-band dark" id="contact">
+    <div class="cta-inner">
+      <div class="cta-copy reveal">
+        <p class="eyebrow">GET STARTED</p>
+        <h2>准备好起飞了吗</h2>
+        <p class="p">留下邮箱，获取首发通知与专属优惠。也可以直接预约线下体验。</p>
+      </div>
+      <form id="signup" class="cta-form reveal" novalidate>
+        <div class="field">
+          <input id="email" name="email" type="email" placeholder="输入邮箱地址" autocomplete="email" required />
+          <button class="btn solid" type="submit" id="submitBtn">订阅</button>
+        </div>
         <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        <p class="tiny">提交即表示同意接收产品资讯，可随时退订。</p>
       </form>
     </div>
   </section>
 </main>
 
 <footer class="foot">
-  <div class="foot-inner">
-    <div class="brand small">
-      <svg viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><path d="M9 23c-3.3 0-6-2.7-6-6s2.7-6 6-6c.9 0 1.8.2 2.6.6C12.9 8.5 15.9 6 19.5 6 24 6 27.7 9.4 28 13.8c2.4.6 4 2.7 4 5.2 0 2.9-2.4 5.3-5.3 5.3H9z" fill="url(#g)"/></svg>
-      <span>Nimbus</span>
+  <div class="wrap foot-top">
+    <div class="foot-brand">
+      <a class="logo dark" href="./">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2 22 12 12 22 2 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5 16.5 12 12 16.5 7.5 12z" fill="currentColor"/></svg>
+        <span>NIMBUS</span>
+      </a>
+      <p>让每个人都能拍出电影感。</p>
     </div>
-    <p>© <span id="year">2026</span> Nimbus · 演示站点，内容可自由替换</p>
+    <div class="foot-cols">
+      <div><h4>产品</h4><a href="#lineup">航拍无人机</a><a href="#lineup">手持影像</a><a href="#lineup">运动相机</a><a href="#specs">配件</a></div>
+      <div><h4>支持</h4><a href="#support">下载中心</a><a href="#support">固件更新</a><a href="#support">维修服务</a><a href="#support">飞行安全</a></div>
+      <div><h4>公司</h4><a href="#contact">关于我们</a><a href="#contact">新闻中心</a><a href="#contact">加入我们</a><a href="#contact">联系销售</a></div>
+      <div><h4>关注</h4><a href="#contact">微博</a><a href="#contact">Bilibili</a><a href="#contact">小红书</a><a href="#contact">YouTube</a></div>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <p>© <span id="year">2026</span> NIMBUS Technology · 演示站点，内容可自由替换</p>
     <div class="foot-links">
-      <a href="robots.txt">robots</a>
-      <a href="#features">能力</a>
-      <a href="#contact">联系</a>
+      <a href="robots.txt">robots</a><a href="#contact">隐私政策</a><a href="#contact">使用条款</a>
     </div>
   </div>
 </footer>
