@@ -3,40 +3,49 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>404 · 这个页面不见了</title>
+<title>404 · 页面未找到 | NIMBUS</title>
 <meta name="robots" content="noindex" />
+<meta name="theme-color" content="#000000" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="aurora" aria-hidden="true">
-  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
-</div>
-<div class="grain" aria-hidden="true"></div>
 
-<header class="nav">
-  <a class="brand" href="./">
-    <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
-      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#7c9cff"/><stop offset="1" stop-color="#b67cff"/>
-      </linearGradient></defs>
-      <path d="M9 23c-3.3 0-6-2.7-6-6s2.7-6 6-6c.9 0 1.8.2 2.6.6C12.9 8.5 15.9 6 19.5 6 24 6 27.7 9.4 28 13.8c2.4.6 4 2.7 4 5.2 0 2.9-2.4 5.3-5.3 5.3H9z" fill="url(#g)"/>
-    </svg>
-    <span>Nimbus</span>
-  </a>
-  <div class="nav-cta" style="margin-left:auto">
-    <a class="btn solid" href="./">回到首页</a>
+<header class="nav solid">
+  <div class="nav-inner">
+    <a class="logo" href="./" aria-label="NIMBUS 首页">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2 22 12 12 22 2 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5 16.5 12 12 16.5 7.5 12z" fill="currentColor"/></svg>
+      <span>NIMBUS</span>
+    </a>
+    <nav class="menu" aria-label="主导航">
+      <a href="index.html#lineup">航拍无人机</a>
+      <a href="index.html#lineup">手持影像</a>
+      <a href="index.html#lineup">运动相机</a>
+      <a href="index.html#specs">技术规格</a>
+      <a href="index.html#support">支持</a>
+      <a href="index.html#contact">商城</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-cta" href="index.html#contact">立即购买</a>
+    </div>
   </div>
 </header>
 
-<main class="hero" style="min-height:60vh;display:flex;flex-direction:column;justify-content:center">
-  <p class="pill"><span class="dot"></span> 404 Not Found</p>
-  <h1>这个页面<em>不见了</em></h1>
-  <p class="lede">地址可能写错了，或者这一页已经被移走。<br />首页还在，点下面的按钮回去。</p>
-  <div class="hero-actions">
-    <a class="btn solid lg" href="./">回到首页</a>
-    <a class="btn ghost lg" href="#features">看看能力</a>
+<main class="hero" style="min-height:100vh;align-items:center;text-align:center;justify-content:center">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="sky"></div>
+    <div class="glow" style="left:50%;right:auto;top:52%;transform:translate(-50%,-50%)"></div>
+  </div>
+  <div class="hero-copy" style="max-width:720px;margin:0 auto">
+    <p class="eyebrow">ERROR 404</p>
+    <h1>这个页面<br />没有起飞</h1>
+    <p class="hero-sub">地址可能写错了，或者这一页已经不在。首页还在，回去看看。</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a class="btn solid" href="./">回到首页</a>
+      <a class="btn line" href="index.html#lineup">查看产品</a>
+    </div>
   </div>
 </main>
+
 </body>
 </html>
